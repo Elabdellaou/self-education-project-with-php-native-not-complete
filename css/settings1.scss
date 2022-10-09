@@ -1,0 +1,28 @@
+@import "scss/colors";
+input[type='file'] {
+    display: none;
+}
+
+.search-box {
+    #result_country {
+        display: none;
+        transition: all 0.5s linear;
+        p {
+            padding: 0.4rem 1rem;
+            cursor: pointer;
+            border-radius: 0.25rem;
+            transition: all 0.5s linear;
+            &:hover {
+                background-color: $icon_sign-up_color !important;
+                color: white !important;
+            }
+            &:last-child {
+                margin-bottom: 0% !important;
+            }
+        }
+    }
+}
+
+.upd_img .up-img_btn {
+    display: none !important;
+}

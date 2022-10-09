@@ -1,0 +1,113 @@
+@import "scss/colors";
+.text-contact {
+    .title-contact {
+        font-weight: 700;
+        letter-spacing: 2px;
+    }
+    .introduction-contact {
+        font-weight: 300;
+    }
+}
+
+.information-contact {
+    .text-information {
+        font-weight: 300;
+        font-size: 1.2rem;
+    }
+    .title-information {
+        font-weight: 550;
+        color: $icon_sign-up_color;
+    }
+    .information-address,
+    .information-phone,
+    .information-email {
+        .content-information {
+            margin-left: 1.25rem;
+            margin-top: 0.25rem;
+            letter-spacing: 0.5px;
+        }
+        .icon {
+            width: 60px;
+            height: 60px;
+            background-color: $icon_sign-up_color;
+            color: $body-color;
+            font-size: 1.2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}
+
+.form-contact {
+    .title-form {
+        font-size: 1.7rem;
+        font-weight: 600;
+    }
+    input,
+    textarea {
+        box-shadow: none !important;
+        border-color: $icon_sign-up_color;
+        border-bottom-width: 2px !important;
+        border-left-width: 0px !important;
+        border-top-width: 0px !important;
+        border-right-width: 0px !important;
+        transition: all 0.5s linear;
+    }
+    input,
+    textarea {
+        &:focus {
+            border-color: $icon_sign-up_color;
+            border-bottom-width: 3px !important;
+        }
+    }
+    input {
+        padding-top: 2.1rem !important;
+    }
+    textarea {
+        padding-top: 1.85rem !important;
+        background-color: white !important;
+    }
+}
+
+body.dark-mode {
+    .form-contact {
+        textarea {
+            background-color: rgba(255, 255, 255, 0.05) !important;
+        }
+        input,
+        textarea {
+            color: $body-color !important;
+        }
+    }
+}
+
+.form-contact .container {
+    width: 85%;
+}
+
+@media screen and(max-width:992px) {
+    .content-contact {
+        .information-contact {
+            padding: 3rem 0rem 3rem 3rem !important;
+        }
+        .form-contact .container {
+            width: 100% !important;
+        }
+    }
+}
+
+@media screen and(max-width:992px) {
+    main .container {
+        padding-left: 1rem !important;
+    }
+}
+
+@media screen and(max-width:576px) {
+    .content-information {
+        padding-left: 0.2rem !important;
+    }
+    .text-information {
+        font-size: 0.75rem !important;
+    }
+}

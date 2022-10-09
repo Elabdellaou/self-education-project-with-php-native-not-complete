@@ -1,0 +1,120 @@
+input {
+    font-family: "Poppins", sans-serif;
+}
+
+.sign-in,
+.sign-up {
+    .btn {
+        text-transform: uppercase;
+        font-weight: 600;
+        font-size: 1.2rem;
+    }
+}
+
+.form-input input {
+    min-height: 42px;
+    left: 5% !important;
+    padding-left: 14%;
+    padding-right: 1rem;
+    outline: none;
+    transition: border-width 0.3s linear, background-color 0.5s linear;
+}
+
+.border-nor {
+    border-color: $icon_sign-up_color !important;
+}
+
+.text-nor {
+    color: $icon_sign-up_color !important;
+}
+
+.form-input input:hover {
+    border-width: 2px !important;
+}
+
+.form-input input:focus {
+    border-width: 2px !important;
+}
+
+.form-input i {
+    font-size: 1.4rem;
+}
+
+.shadow-primary-input {
+    box-shadow: 0rem 0.5rem 0.5rem -0.5rem $shadow_btn !important;
+}
+
+.border-danger {
+    box-shadow: 0rem 0.5rem 0.5rem -0.5rem $red !important;
+}
+
+.checkbox-div {
+    width: 31px;
+    height: 31px;
+    background-color: transparent;
+    z-index: 5;
+    transition: all 0.5s linear;
+    cursor: pointer;
+    label {
+        cursor: pointer;
+        i {
+            font-size: 1.3rem !important;
+            color: $dark; //#ffd43b
+        }
+    }
+}
+
+.checkbox-div:hover {
+    transform: scale(95%);
+}
+
+body.dark-mode {
+    .checkbox-div {
+        label i {
+            color: $body-color; //#74c0fc
+        }
+    }
+    input {
+        background-color: $dark_mode_background !important;
+        color: $dark_mode_color;
+    }
+    .checkbox input {
+        border-color: $light;
+        background-color: $dark_mode_background;
+    }
+}
+
+form .checkbox {
+    input,
+    label {
+        cursor: pointer;
+    }
+    input {
+        appearance: none;
+        width: 18px;
+        height: 18px;
+        border: 1px solid $dark_mode;
+        background-color: $light;
+        border-radius: 2.5px;
+        position: relative;
+    }
+    input::after {
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        font-size: 1rem;
+        content: "\f00c";
+        color: $icon_sign-up_color;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        transition: opacity 0.3s linear;
+    }
+    input:hover:not(:checked)::after {
+        opacity: 0.5;
+    }
+    input[type="checkbox"]:checked::after {
+        opacity: 1;
+    }
+}

@@ -1,0 +1,48 @@
+button {
+    font-family: "Poppins", sans-serif;
+}
+
+.btn.transparent {
+    width: 140px;
+    height: 40px;
+    text-transform: uppercase;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-form {
+    border: none;
+    background: $icon_sign-up_color;
+    color: white;
+    transition: all 0.5s linear;
+}
+
+.btn.transparent:hover {
+    color: $icon_sign-up_color !important;
+}
+
+.sign-in .btn-form:hover {
+    background: linear-gradient(to right, $icon_sign-up_color, $icon_sign-in_color);
+}
+
+.sign-up .btn-form:hover {
+    background: linear-gradient(to left, $icon_sign-up_color, $icon_sign-in_color);
+}
+
+.btn-form:hover {
+    color: white;
+    transform: scale(97%);
+}
+
+.shadow-primary {
+    box-shadow: 0 0.5rem 1.125rem -0.5rem $shadow_btn;
+}
+
+.btn-outline-primary {
+    color: $icon_sign-up_color;
+    border-color: $icon_sign-up_color !important;
+}
+
+.btn-outline-primary:hover {
+    transform: scale(97%);
+    background: linear-gradient(to left, $icon_sign-up_color, $icon_sign-in_color) !important;
+}
