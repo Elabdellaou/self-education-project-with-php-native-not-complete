@@ -9,5 +9,5 @@ if(isset($_POST["id"])&& isset($_POST["password"])){
     $u->setPassword($pass);
     $u->filter();
     $u->UpdateUser();
-    header("Location:http://localhost/Self%20Education/Tools/home.php");
+    header("Location:../../../Tools/home.php");
 }

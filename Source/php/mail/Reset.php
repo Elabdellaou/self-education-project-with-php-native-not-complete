@@ -5,7 +5,7 @@ $iv = '1234521478569874';
 $access_encrypt = openssl_encrypt("selfeducation2022", 'AES-256-CBC', $key, 0, $iv);
 if (isset($_POST['email_reset']) && isset($_POST['id'])) {
     $id_encrypt = openssl_encrypt($_POST['id'], 'AES-256-CBC', $key, 0, $iv);
-    $url = 'http://localhost/Self%20Education/Tools/Reset.php?id=' . $id_encrypt . '&access=' . $access_encrypt;
+    $url = 'http://localhost/self-education-project-with-php-native-not-complete.test/Tools/Reset.php?id=' . $id_encrypt . '&access=' . $access_encrypt;
     $name=$_POST['name'];
     $mail->addAddress($_POST['email_reset'],$name);
     $mail->Subject = 'Reset Password';
@@ -31,7 +31,7 @@ if (isset($_POST['email_reset']) && isset($_POST['id'])) {
                                                                             <tbody>
                                                                                 <tr style="border-collapse:collapse">
                                                                                     <td align="center" style="Margin:0;padding-left:15px;padding-right:15px;padding-top:20px;padding-bottom:20px;font-size:1.25rem">
-                                                                                        <a href="http://localhost/Self%20Education/Tools/home.php" style="text-decoration:none;color:#000000;font-weight:570;" target="_blank">
+                                                                                        <a href="http://localhost/self-education-project-with-php-native-not-complete.test/Tools/home.php" style="text-decoration:none;color:#000000;font-weight:570;" target="_blank">
                                                                                             <span style="color:#6478eb;font-weight:700;font-size:1.4rem">Self</span>Education
                                                                                         </a>
                                                                                     </td>

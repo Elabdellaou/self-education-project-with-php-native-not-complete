@@ -1,5 +1,5 @@
 <?php
-include('../Source/php/login_facebook/facebook_login.php');
+// include('../Source/php/login_facebook/facebook_login.php');
 $em=isset($_COOKIE['email'])?$_COOKIE['email']:"";
 $pass=isset($_COOKIE['pass'])?$_COOKIE['password']:"";
 $err = isset($_GET['err']) ? 'danger' : 'nor';
@@ -106,7 +106,8 @@ $mode = (isset($_COOKIE['dark-mode']) && !empty($_COOKIE['dark-mode'])) ? $_COOK
                         <p class="text-white fs-4">Powerful for developers.<br /> Fsast for everyone.</p>
                         <button class="btn btn-outline-light shadow-primary transparent fw-bold" id="sign-in-btn">Sign in</button>
                     </div>
-                    <a class="btn btn-lg btn-primary shadow-primary fs-6 facebook ronded-3" href="<?php echo $facebook_login_url; ?>" style="font-weight: 580;" name="facebook_sign_up">
+                    <!-- <a class="btn btn-lg btn-primary shadow-primary fs-6 facebook ronded-3" href="<?php echo $facebook_login_url; ?>" style="font-weight: 580;" name="facebook_sign_up"> -->
+                    <a class="btn btn-lg btn-primary shadow-primary fs-6 facebook ronded-3" href="#" style="font-weight: 580;" name="facebook_sign_up">
                         <i class="fa-brands fa-facebook-square fs-5"></i>
                         <span> Sign up <span class="fm">with Facebook</span></span>
                     </a>
@@ -119,7 +120,8 @@ $mode = (isset($_COOKIE['dark-mode']) && !empty($_COOKIE['dark-mode'])) ? $_COOK
                         <p class="text-white fs-4">Powerful for developers.<br /> Fast for everyone.</p>
                         <button class="btn btn-outline-light shadow-primary transparent fw-bold" id="sign-up-btn">Sign up</button>
                     </div>
-                    <a class=" btn btn-lg btn-primary shadow-primary fs-6 rounded-3 facebook" href="<?php echo $facebook_login_url; ?>" style="font-weight: 580;" name="facebook_sign_in">
+                    <!-- <a class=" btn btn-lg btn-primary shadow-primary fs-6 rounded-3 facebook" href="<?php echo $facebook_login_url; ?>" style="font-weight: 580;" name="facebook_sign_in"> -->
+                    <a class=" btn btn-lg btn-primary shadow-primary fs-6 rounded-3 facebook" href="#" style="font-weight: 580;" name="facebook_sign_in">
                         <i class="fa-brands fa-facebook-square fs-5"></i>
                         <span> Sign in <span class="fm">with Facebook</span></span>
                     </a>

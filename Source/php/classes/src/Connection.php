@@ -13,9 +13,9 @@ class Connection{
     }
     function getConnection(){
         $this->host=="localhost";
-        $this->dbname="self_education";
+        $this->dbname="selfeducation";
         $this->username="root";
-        $this->password="";
+        $this->password="ibr@him2001";
         $this->charset="utf8mb4";
 
         $this->dsn='mysql:host='.$this->host.';dbname='.$this->dbname.";charset=".$this->charset;

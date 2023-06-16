@@ -2,7 +2,7 @@
 /* Attempt MySQL server connection. Assuming you are running
 MySQL
 server with default setting (user 'root' with no password) */
-$link = mysqli_connect("localhost", "root", "", "test1");
+$link = mysqli_connect("localhost", "root", "ibr@him2001", "selfeducation");
 // Check connection
 if ($link === false) {
     die("ERROR: Could not connect. " .
@@ -10,7 +10,7 @@ if ($link === false) {
 }
 if (isset($_REQUEST["term"])) {
     // Prepare a select statement
-    $sql = "SELECT * FROM countries WHERE name LIKE ?";
+    $sql = "SELECT * FROM countries WHERE country LIKE ?";
 
     if ($stmt = mysqli_prepare($link, $sql)) {
         // Bind variables to the prepared statement as parameters
@@ -26,7 +26,7 @@ if (isset($_REQUEST["term"])) {
             if (mysqli_num_rows($result) > 0) {
                 // Fetch result rows as an associative array
                 while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
-                    echo "<p >" . $row["name"] . "</p>";
+                    echo "<p >" . $row["country"] . "</p>";
                 }
             }
         } else {

@@ -15,7 +15,7 @@ function valid($var)
 $token=isset($_GET["token"])?$_GET["token"]:"";
 $token=valid($token);
 if (isset($_GET["token"])&&$token==$access_encrypt) {
-    $mail->addAddress($_SESSION['user']['email'], $_SESSION['user']['fullname']);
+    $mail->addAddress($_SESSION['user']['email'], $_SESSION['user']['name']);
     $mail->Subject = 'Welcome to Self Education';
     $mail->Body    = '<div style="width:100%;font-family:arial,\'Poppins\',sans-serif;padding:0;Margin:0">
     <div style="background-color:#f6f6f6">
@@ -39,7 +39,7 @@ if (isset($_GET["token"])&&$token==$access_encrypt) {
                                                                             <tbody>
                                                                                 <tr style="border-collapse:collapse">
                                                                                     <td align="center" style="Margin:0;padding-left:15px;padding-right:15px;padding-top:20px;padding-bottom:20px;">
-                                                                                        <a href="http://localhost/Self%20Education/Tools/home.php" style="text-decoration:none;color:#000000;font-weight:570;font-size:1.25rem;" target="_blank">
+                                                                                        <a href="http://localhost/self-education-project-with-php-native-not-complete.test/Tools/home.php" style="text-decoration:none;color:#000000;font-weight:570;font-size:1.25rem;" target="_blank">
                                                                                             <span style="color:#6478eb;font-weight:700;font-size:1.4rem">Self</span>Education
                                                                                         </a>
                                                                                     </td>
@@ -84,7 +84,7 @@ if (isset($_GET["token"])&&$token==$access_encrypt) {
                                                                                 <tr style="border-collapse:collapse">
                                                                                     <td align="left" style="padding:0;Margin:0;padding-bottom:15px">
                                                                                         <p style="Margin:0;line-height:36px;color:#333333;font-size:24px"><b>Welcome</b>
-                                                                                            <strong>&nbsp;'.$_SESSION['user']['fullname'].'!</strong>
+                                                                                            <strong>&nbsp;'.$_SESSION['user']['name'].'!</strong>
                                                                                         </p>
                                                                                     </td>
                                                                                 </tr>
@@ -111,7 +111,7 @@ if (isset($_GET["token"])&&$token==$access_encrypt) {
                                                                             <tbody>
                                                                                 <tr style="border-collapse:collapse">
                                                                                     <td align="center" style="Margin:0;padding-left:20px;padding-right:20px;padding-bottom:35px;padding-top:40px"><span style="border-style:solid;border-color:#6478eb;background:#6478eb;border-width:0px 0px 2px 0px;display:inline-block;border-radius:60px;width:auto;border-bottom-width:0px">
-                                                                                            <a href="http://localhost/Self%20Education/Tools/home.php" style="text-decoration:none;color:#ffffff;font-size:18px;border-style:solid;border-color:#6478eb;border-width:10px 25px;display:inline-block;background:#6478eb;border-radius:60px;font-weight:normal;font-style:normal;line-height:22px;width:auto;text-align:center" target="_blank">Get Start</a>
+                                                                                            <a href="http://localhost/self-education-project-with-php-native-not-complete.test/Tools/home.php" style="text-decoration:none;color:#ffffff;font-size:18px;border-style:solid;border-color:#6478eb;border-width:10px 25px;display:inline-block;background:#6478eb;border-radius:60px;font-weight:normal;font-style:normal;line-height:22px;width:auto;text-align:center" target="_blank">Get Start</a>
                                                                                         </span>
                                                                                     </td>
                                                                                 </tr>
@@ -147,5 +147,5 @@ if (isset($_GET["token"])&&$token==$access_encrypt) {
     </div>
     </div>';
     $mail->send();
-    header("Location:http://localhost/Self%20Education/Tools/home.php");
+    header("Location:http://localhost/self-education-project-with-php-native-not-complete.test/Tools/home.php");
 }

@@ -129,7 +129,7 @@ $mode = (isset($_COOKIE['dark-mode']) && !empty($_COOKIE['dark-mode'])) ? $_COOK
                                 $("#content").addClass("send_mode");
                             }
                             else
-                                location.replace("http://localhost/Self%20Education/Tools/Forgot_password.php?er");
+                                location.replace("/Tools/Forgot_password.php?er");
                         },
                         complete: function() {
                         }

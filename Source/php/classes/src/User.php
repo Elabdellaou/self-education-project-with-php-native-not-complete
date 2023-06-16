@@ -3,23 +3,23 @@
 class user extends Connection
 {
     private $id;
-    private $fullname;
+    private $name;
     private $email;
     private $password;
     private $country;
     private $xp;
     private $lv;
-    private $Image;
-    function __construct($_id = "", $_fullname = "", $_email = "", $_password = "", $_country = "", $_xp = "0,0", $_lv = 0, $_Image = "default.png")
+    private $image;
+    function __construct($_id = "", $_fullname = "", $_email = "", $_password = "", $_country = "", $_xp = "0,0", $_lv = 0, $_image = "default.png")
     {
         $this->id = $_id;
-        $this->fullname = $_fullname;
+        $this->name = $_fullname;
         $this->email = $_email;
         $this->password = $_password;
         $this->country = $_country;
         $this->xp = $_xp;
         $this->lv = $_lv;
-        $this->Image = $_Image;
+        $this->image = $_image;
     }
     function ExitUser(): bool
     {
@@ -42,8 +42,8 @@ class user extends Connection
         $res->execute(["email" => $this->email]);
         $resfin = $res->fetchObject();
             if ($res->rowCount() > 0) {
-                $this->Image= $resfin->Image;
-                $this->fullname= $resfin->fullname;
+                $this->image= $resfin->image;
+                $this->name= $resfin->name;
                 $this->id= $resfin->id;
                 return true;
             }
@@ -57,8 +57,8 @@ class user extends Connection
         $resfin = $res->fetchObject();
             if ($res->rowCount() > 0) {
                 $this->email=$resfin->email;
-                $this->Image= $resfin->Image;
-                $this->fullname= $resfin->fullname;
+                $this->image= $resfin->image;
+                $this->name= $resfin->name;
                 $this->country= $resfin->country;
                 $this->xp= $resfin->xp;
                 $this->password= $resfin->password;
@@ -70,16 +70,16 @@ class user extends Connection
     function AddUser(): bool
     {
         $u = [
-            "fullname" => $this->fullname,
+            "name" => $this->name,
             "email" => $this->email,
             "password" => $this->password,
             "country" => $this->country,
             "xp" => $this->xp,
             "level" => $this->lv,
-            "Image" => $this->Image
+            "image" => $this->image
         ];
         $select = "select * from users where email=:email";
-        $insert = "insert into `users`(fullname,email,password,country,xp,level,Image)values(:fullname,:email,:password,:country,:xp,:level,:Image)";
+        $insert = "insert into `users`(name,email,password,country,xp,level,image)values(:name,:email,:password,:country,:xp,:level,:image)";
         $res = $this->getConnection()->prepare($select);
         $res->execute(["email" => $this->email]);
         $resfin = $res->fetchObject();
@@ -102,16 +102,16 @@ class user extends Connection
     function UpdateUser():bool
     {
         $u = [
-            "fullname" => $this->fullname,
+            "name" => $this->name,
             "email" => $this->email,
             "password" => $this->password,
             "country" => $this->country,
             "xp" => $this->xp,
             "level" => $this->lv,
-            "Image" => $this->Image,
+            "image" => $this->image,
             "id"=>$this->id
         ];
-        $update="update `users` set fullname=:fullname,email=:email,password=:password,country=:country,xp=:xp,level=:level,Image=:Image where id=:id";
+        $update="update `users` set name=:name,email=:email,password=:password,country=:country,xp=:xp,level=:level,image=:image where id=:id";
         $res=$this->getConnection()->prepare($update);
         if($res->execute($u))
             return true;
@@ -132,7 +132,7 @@ class user extends Connection
     }
     function getFullName()
     {
-        return $this->fullname;
+        return $this->name;
     }
     function getEmail()
     {
@@ -156,11 +156,11 @@ class user extends Connection
     }
     function getImage()
     {
-        return $this->Image;
+        return $this->image;
     }
     function setFullName($fn)
     {
-        $this->fullname = $fn;
+        $this->name = $fn;
     }
     function setEmail($em)
     {
@@ -182,9 +182,9 @@ class user extends Connection
     {
         $this->lv = $lvl;
     }
-    function setImage($img)
+    function setimage($img)
     {
-        $this->Image = $img;
+        $this->image = $img;
     }
     function setId($id)
     {

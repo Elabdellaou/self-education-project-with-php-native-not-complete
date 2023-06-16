@@ -21,9 +21,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $pass=Valid($user->getPassword());
                 setcookie("pass", openssl_decrypt($pass, 'AES-256-CBC', $key, 0, $iv),time()+60*60*24*30*12,"");
             }
-            header("Location:http://localhost/Self%20Education/Tools/home.php");
+            header("Location:../../../Tools/home.php");
         }else
-            header("Location:http://localhost/Self%20Education/Tools/Login.php?err");
+            header("Location:../../../Tools/Login.php?err");
     }   
 }else 
-    header("Location:http://localhost/Self%20Education/Tools/Login.php");
+    header("Location:../../../Tools/Login.php");

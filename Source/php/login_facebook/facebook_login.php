@@ -38,5 +38,6 @@ if (isset($_GET['code'])) {
     header("Location:home.php");
 } else {
     $facebook_permissions = [""];
-    $facebook_login_url = $facebook_helper->getLoginUrl('http://localhost/Quiz_C/Tools/', $facebook_permissions);
+    // $facebook_login_url = $facebook_helper->getLoginUrl('http://localhost/Quiz_C/Tools/', $facebook_permissions);
+    $facebook_login_url = '';
 }
